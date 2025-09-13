@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>工時計算器設定</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans TC",sans-serif;padding:16px;max-width:720px;margin:auto}
+    .row{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center;margin:8px 0}
+    input{width:100%;padding:8px;border:1px solid #ddd;border-radius:8px}
+    select{padding:8px}
+    button{padding:10px 14px;border:0;border-radius:10px;background:#111;color:#fff;cursor:pointer}
+    .card{border:1px solid #eee;border-radius:12px;padding:16px;margin:16px 0}
+    .muted{color:#666}
+  </style>
+</head>
+<body>
+  <h2>工時計算器設定</h2>
+  <div class="card">
+    <div class="row">
+      <label>計算模式</label>
+      <select id="mode">
+        <option value="hourly">以時薪</option>
+        <option value="monthly">以月薪換算時薪</option>
+      </select>
+    </div>
+    <div class="row" data-mode="hourly">
+      <label>時薪（NT$）</label>
+      <input id="hourlyWage" type="number" min="1" placeholder="例如 200"/>
+    </div>
+    <div class="row" data-mode="monthly">
+      <label>月薪（NT$）</label>
+      <input id="monthlySalary" type="number" min="1" placeholder="例如 40000"/>
+    </div>
+    <div class="row" data-mode="monthly">
+      <label>每月工時（小時）</label>
+      <input id="monthlyHours" type="number" min="1" placeholder="例如 174"/>
+    </div>
+    <div class="row">
+      <label>每日工時（換算天數）</label>
+      <input id="dailyHours" type="number" min="1" placeholder="例如 8"/>
+    </div>
+    <div class="row">
+      <label>稅率/提撥（%）</label>
+      <input id="taxRate" type="number" min="0" max="100" placeholder="可留白"/>
+    </div>
+    <div class="row">
+      <label>小數位數</label>
+      <input id="roundTo" type="number" min="0" max="3" placeholder="預設 1"/>
+    </div>
+    <button id="save">儲存設定</button>
+    <p class="muted" id="status"></p>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>

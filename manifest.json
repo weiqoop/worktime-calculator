@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "工時計算器 – 價格→工時",
+  "version": "0.1.0",
+  "description": "在 momo 等購物網站上一鍵把商品價格換算成你需要的工作時數。",
+  "permissions": ["storage", "contextMenus", "activeTab", "scripting"],
+  "host_permissions": [
+    "*://*.momoshop.com.tw/*",
+    "*://*.momo.com.tw/*",
+    "*://*.pchome.com.tw/*",
+    "*://*.shopee.tw/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "工時計算器"
+  },
+  "options_page": "options/options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+  {
+    "matches": [
+      "*://*.momoshop.com.tw/*",
+      "*://*.momo.com.tw/*",
+      "*://*.shopee.tw/*",
+      "*://*.pchome.com.tw/*",
+      "*://24h.pchome.com.tw/*"
+    ],
+    "js": ["content.js"],
+    "css": ["styles.css"],
+    "run_at": "document_idle"
+  }
+]
+}

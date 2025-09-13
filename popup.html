@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>工時計算器</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans TC",sans-serif;padding:12px;width:280px}
+    input,select{width:100%;padding:8px;margin:6px 0;border:1px solid #ddd;border-radius:8px}
+    button{width:100%;padding:10px;border:0;border-radius:10px;background:#111;color:#fff;cursor:pointer}
+    .muted{color:#666;font-size:12px}
+  </style>
+</head>
+<body>
+  <h3>工時計算器</h3>
+  <div id="detected"></div>
+  <label>價格（NT$）</label>
+  <input id="price" type="number" min="0" placeholder="例如 29900"/>
+  <button id="calc">換算工時</button>
+  <p id="result"></p>
+  <p class="muted"><a href="../options/options.html" target="_blank">開啟設定</a></p>
+  <script src="popup.js"></script>
+</body>
+</html>
