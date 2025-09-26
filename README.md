@@ -36,5 +36,5 @@ Hourly wage or Monthly salary
 Daily working hours
 Tax rate (optional)
 Rounding precision
--------------------------------
-YAYAYAYAYAYATEST
+
+testtesttest
